@@ -1,0 +1,135 @@
+.playground-container
+{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    position: relative;
+}
+#playground-right-cirlce
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #182341;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    animation: playground-right-circle-an 2s infinite ease-in;
+}
+@keyframes playground-right-circle-an 
+{
+    to
+    {
+        opacity: 0;
+    }    
+}
+#playground-my-hand, #playground-computer-hand
+{
+    --hand-template-size: 200px;
+    position: relative;
+    z-index: 1;
+}
+#playground-computer-hand
+{
+    opacity: 0;
+    transition: .5s;
+}
+#playground-left, #playground-right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+}
+.playground-label
+{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: var(--bold-fw);
+    position: relative;
+    z-index: 2;
+}
+#playground-middle
+{
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+#playground-middle > label
+{
+    color: white;
+    font-size: 50px;
+    font-weight: var(--bold-fw);
+    text-transform: uppercase;
+    text-align: center;
+}
+@media screen and (max-width: 530px) 
+{
+    #playground-middle
+    {
+        position: absolute;
+        bottom: -250px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #playground-middle > label
+    {
+        white-space: nowrap;
+    }
+    .playground-container
+    {
+        margin-top: 30px;
+        gap: 50px;
+    }
+    .playground-container .hand-template-container
+    {
+        height: 130px;
+        width: 130px;        
+        transform: scale(0.7);
+    }    
+    .playground-label
+    {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 15px;
+    }
+    .hand-template-container img
+    {
+        height: 60px;
+    }
+    .hand-template-rock::before,
+    .hand-template-scissors::before, 
+    .hand-template-paper::before
+    {
+        height: 170px;
+        width: 170px;
+    }
+    #playground-right-cirlce
+    {
+        height: 130px;
+        width: 130px;
+        transform: translateX(-50%) scale(0.7);
+    }
+    #playgronud-right
+    {
+        z-index: 2;
+    }
+    #playground-left, #playground-right
+    {
+        gap: 50px;
+        flex-direction: column-reverse;
+        position: relative;        
+    }
+}

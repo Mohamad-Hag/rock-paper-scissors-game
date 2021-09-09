@@ -1,0 +1,95 @@
+.hand-template-container
+{
+    --hand-template-size: 130px;
+    height: var(--hand-template-size);
+    width: var(--hand-template-size);    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;    
+    cursor: pointer;
+}
+.hand-template-win
+{
+    box-shadow: 0 4px 0 80px #27293000, 
+    0 4px 0 140px #222d4b00,
+    0 4px 0 200px #1e294900;
+    animation: hand-template-win-an 2s infinite ease-in;
+}
+@keyframes hand-template-win-an 
+{
+    0%
+    {
+        box-shadow: 0 4px 0 80px #2a365400, 
+    0 4px 0 140px #222d4b00,
+    0 4px 0 200px #1e294900;
+    }   
+    25%
+    {
+        box-shadow: 0 4px 0 80px #2a3654,
+    0 4px 0 140px #222d4b00,
+    0 4px 0 200px #1e294900;
+    } 
+    50%
+    {
+        box-shadow: 0 4px 0 80px #2a3654, 
+    0 4px 0 140px #222d4b,
+    0 4px 0 200px #1e294900;
+    }
+    100%
+    {
+        box-shadow: 0 4px 0 80px #2a3654, 
+    0 4px 0 140px #222d4b,
+    0 4px 0 200px #1e2949;
+    }
+}
+.hand-template-inner
+{
+    background-color: white;     
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 8px 0 0 #00000020;
+}
+.hand-template-container img
+{
+    height: calc(var(--hand-template-size) - 70px);    
+}
+.hand-template-scissors::before
+{
+    background: linear-gradient(90deg, var(--scissors-gr));
+    box-shadow: 0 8px 0 0 #c56d15;
+}
+.hand-template-paper::before
+{
+    background: linear-gradient(90deg, var(--paper-gr));
+    box-shadow: 0 8px 0 0 #2f44b7;
+}
+.hand-template-rock::before
+{
+    background: linear-gradient(90deg, var(--rock-gr));
+    box-shadow: 0 8px 0 0 #831c3f;
+}
+.hand-template-rock::before,
+.hand-template-scissors::before,
+.hand-template-paper::before
+{
+    content: '';
+    height: calc(var(--hand-template-size) + 40px);
+    width: calc(var(--hand-template-size) + 40px);   
+    position: absolute;    
+    z-index: -1;
+    border-radius: 50%;   
+}
+@media screen and (max-width: 530px)
+{
+    #hand-template-container
+    {
+        --hand-template-size: 10px !important;
+    }    
+}

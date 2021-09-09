@@ -1,13 +1,77 @@
-body {
+*
+{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  list-style-type: none;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;  
+  font-family: var(--barlow-ff);
 }
+html
+{
+  height: 100vh;
+  width: 100wv;
+}
+body
+{
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(circle at top, var(--main-rgr));
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+:root
+{
+  /* Colors */
+  /** Primary **/
+  --scissors-gr: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+  --paper-gr: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+  --rock-gr: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+  --lizard-gr: hsl(261, 73%, 60%), hsl(261, 72%, 63%);
+  --spock-gr: hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+  /** Neutral **/
+  --dark-txt-cr: hsl(229, 25%, 31%);
+  --score-txt-cr: hsl(229, 64%, 46%);
+  --header-outline-cr: hsl(217, 16%, 45%);
+  /** Background **/
+  --main-rgr: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* Font Families */
+  --barlow-ff: 'Barlow Semi Condensed', sans-serif;
+
+  /* Font Weights */
+  --semi-bold-fw: 600;
+  --bold-fw: 700; 
+
+  /* Paddings */
+  --header-pg: 20px;
+  --rules-pg: 30px;
+  --around-header-pg: 40px;
+
+  /* Border Radiuses */
+  --main-br: 15px;
+  --sec-br: 10px;
+}
+::-moz-focus-outer, ::-moz-focus-outer
+{
+  border: none;
+}
+a, button, img
+{
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+img
+{
+  -webkit-user-drag: none;
+}
+@media screen and (max-width: 510px )
+{
+  :root
+  {
+    --around-header-pg: 20px;
+    --header-pg: 15px;
+  }  
 }

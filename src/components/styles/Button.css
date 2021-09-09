@@ -1,0 +1,22 @@
+.button-container
+{
+    padding: 8px 40px;
+    font-size: 18px;    
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+.button-outline
+{    
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.button-fill
+{
+    color: black;
+    background-color: white;   
+    border: none;
+}
